@@ -1,0 +1,54 @@
+
+This is the program for check the Image Similarity Measurement of two image.
+
+programming language: python 
+libraries : OpenCV
+
+The output values between 0 and 1, 
+where 1 is for total similarity and 0 for total dissimilarity.
+
+useing Structural Similarity Index Measurement (SSIM)
+
+
+# 1. Import the necessary packages
+from skimage.measure import compare_ssim
+from PIL import Image 
+from resizeimage import resizeimage
+import argparse
+import imutils
+import cv2
+import numpy as np
+
+
+
+Program Run Command: any one of the following command can use. 
+
+1) python img_similarity_mes.py --first crak1.jpeg --second crak2.jpeg
+2) python img_similarity_mes.py --first fruit1.png --second fruits2.png
+3) python img_similarity_mes.py --first eyerov2.png --second eyerov3.png
+4) python img_similarity_mes.py --first team.png --second team1.png
+5) python img_similarity_mes.py --first test3.jpeg --second test4.jpeg
+
+
+Program Structure:
+
+1.get the two image as input 
+2.save these image 
+3.resize the saved image
+4.covert image to gray scale 
+5.removing salt-and-pepper noise using median filter
+6.applying Structural Similarity Index and shows the SSIM Score with b/w 0-1
+For Total Similarity, SSIM =1
+For total dissimilarity, SSIM =0
+7.threshold the difference image, and finding contours to obtain the regions of the two input images that differ
+8.compute bounding box of the contour and then draw the bounding box on both input images to represent where the two images differ
+9.Output :
+two image with bounding box and image_Similarity SSIM Score
+
+
+
+
+ 
+
+
+
